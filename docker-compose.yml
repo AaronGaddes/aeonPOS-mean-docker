@@ -11,6 +11,8 @@ services:
     build: express-server # specify the directory of the Dockerfile
     ports:
       - "3000:3000" # specify port forwarding
+    links:
+      - database # link this service to the database service
   
   database: # name of the third service
     image: mongo # specify the directory of the Dockerfile
